@@ -1,13 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './app/App';
+import { BrowserRouter, useRoutes } from 'react-router-dom';
+import { routers } from './routes/routes';
 import { TodoProvider } from './providers/TodoProvider';
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(
-  <TodoProvider>
-    <App />
-  </TodoProvider>
+import { AuthProvider } from './providers/AuthProvider';
+function Router(){
+  return useRoutes(routers)
+}
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <BrowserRouter>
+    <AuthProvider>
+      <TodoProvider>
+        <Router />
+      </TodoProvider>
+    </AuthProvider>
+  </BrowserRouter>
 );

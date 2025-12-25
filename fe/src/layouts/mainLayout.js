@@ -1,8 +1,10 @@
-export const MainLayout = ({ children }) => {
+import { Outlet } from "react-router-dom";
+
+export const MainLayout = ()=>{
     return (
         <div>
-            <h1>To do list application</h1>
-            { children }
+            <h1>TODO LIST APPLICATION</h1>
+            <Outlet />
         </div>
     );
 }
