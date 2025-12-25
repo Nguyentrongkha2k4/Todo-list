@@ -1,4 +1,4 @@
-const prisma = require("../db/prisma");
+import prisma from "../db/prisma.js";
 
 const getTodos = async () => {
     return prisma.todo.findMany();
@@ -10,7 +10,7 @@ const createTodos = async (title) => {
     });
 };
 
-module.exports = {
+export default {
     getTodos,
     createTodos,
 };
