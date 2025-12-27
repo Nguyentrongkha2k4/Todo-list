@@ -1,13 +1,13 @@
 import { MainLayout } from "../layouts/mainLayout"
 import { TodoList } from "../components/Todo/TodoList"
-import { Login } from "../components/Login/Login"
+import { LoginPage } from "../components/Login/index"
 
 export const routers = [
     {
         element: <MainLayout />,
         children: [
             {path: '/', element: <TodoList />},
-            {path: '/login', element: <Login />}
+            {path: '/login', element: <LoginPage />}
         ]
         
     }

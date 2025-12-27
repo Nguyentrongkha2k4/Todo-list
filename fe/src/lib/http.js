@@ -7,5 +7,6 @@ export async function http(url, options = {}) {
     });
 
     if (!res.ok) throw new Error("API Error");
+    
     return res.json();
 }

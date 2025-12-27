@@ -12,9 +12,15 @@ export const AuthProvider = ({ children }) => {
         setIsLogin(!!token);
     },[]);
 
-    const login = (token) => {
+    const login = (token, remember = false) => {
+        let expires = 1;
+
+        if(remember){
+            expires = 7;
+        }
+
         Cookies.set("token", token, {
-            expires: 1,
+            expires: expires,
             secure: false,
             sameSite: "lax"
         });
